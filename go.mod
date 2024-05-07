@@ -16,7 +16,7 @@ require (
 	github.com/mattes/migrate v3.0.1+incompatible
 	github.com/prometheus/client_golang v1.11.1
 	github.com/rs/zerolog v1.26.1
-	github.com/streadway/amqp v1.0.0
+	github.com/streadway/amqp v1.1.0
 	github.com/stretchr/testify v1.8.2
 	github.com/swaggo/swag v1.7.6
 	github.com/testcontainers/testcontainers-go v0.20.0
