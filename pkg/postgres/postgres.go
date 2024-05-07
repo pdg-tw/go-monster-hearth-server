@@ -4,10 +4,11 @@ package postgres
 import (
 	"context"
 	"fmt"
-	"github.com/evrone/go-clean-template/config"
 	"log"
 	"sync"
 	"time"
+
+	"github.com/pdg-tw/go-monster-hearth-server/config"
 
 	"github.com/Masterminds/squirrel"
 	"github.com/jackc/pgx/v4/pgxpool"

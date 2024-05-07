@@ -10,10 +10,11 @@
 package openapi
 
 import (
-	"github.com/evrone/go-clean-template/internal/application"
-	"github.com/evrone/go-clean-template/internal/domain/translation/entity"
-	"github.com/evrone/go-clean-template/pkg/logger"
 	"net/http"
+
+	"github.com/pdg-tw/go-monster-hearth-server/internal/application"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/domain/translation/entity"
+	"github.com/pdg-tw/go-monster-hearth-server/pkg/logger"
 
 	"github.com/gin-gonic/gin"
 )

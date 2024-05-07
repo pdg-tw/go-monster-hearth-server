@@ -3,8 +3,9 @@ package application
 import (
 	"context"
 	"fmt"
-	"github.com/evrone/go-clean-template/internal/domain/translation/entity"
-	"github.com/evrone/go-clean-template/internal/domain/translation/service"
+
+	"github.com/pdg-tw/go-monster-hearth-server/internal/domain/translation/entity"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/domain/translation/service"
 )
 
 // TranslationUseCase -.

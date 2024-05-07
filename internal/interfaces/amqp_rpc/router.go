@@ -1,9 +1,10 @@
 package amqprpc
 
 import (
-	"github.com/evrone/go-clean-template/internal/application"
-	"github.com/evrone/go-clean-template/pkg/rabbitmq/rmq_rpc/server"
 	"sync"
+
+	"github.com/pdg-tw/go-monster-hearth-server/internal/application"
+	"github.com/pdg-tw/go-monster-hearth-server/pkg/rabbitmq/rmq_rpc/server"
 )
 
 var hdlOnce sync.Once

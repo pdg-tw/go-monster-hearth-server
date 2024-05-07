@@ -2,18 +2,19 @@ package main_test
 
 import (
 	"context"
-	"github.com/evrone/go-clean-template/config"
-	"github.com/evrone/go-clean-template/internal"
-	"github.com/evrone/go-clean-template/internal/test/db"
-	"github.com/evrone/go-clean-template/pkg/logger"
-	"github.com/evrone/go-clean-template/pkg/rabbitmq/rmq_rpc/client"
-	"github.com/gin-gonic/gin"
-	"github.com/stretchr/testify/require"
 	"io"
 	"net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"
+
+	"github.com/gin-gonic/gin"
+	"github.com/pdg-tw/go-monster-hearth-server/config"
+	"github.com/pdg-tw/go-monster-hearth-server/internal"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/test/db"
+	"github.com/pdg-tw/go-monster-hearth-server/pkg/logger"
+	"github.com/pdg-tw/go-monster-hearth-server/pkg/rabbitmq/rmq_rpc/client"
+	"github.com/stretchr/testify/require"
 )
 
 var httpEngine *gin.Engine

@@ -2,9 +2,9 @@
 
 Domain Driven Design (DDD) Architecture template for Golang services
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/evrone/go-clean-template)](https://goreportcard.com/report/github.com/evrone/go-clean-template)
-[![License](https://img.shields.io/github/license/evrone/go-clean-template.svg)](https://github.com/evrone/go-clean-template/blob/master/LICENSE)
-[![Release](https://img.shields.io/github/v/release/evrone/go-clean-template.svg)](https://github.com/evrone/go-clean-template/releases/)
+[![Go Report Card](https://goreportcard.com/badge/github.com/pdg-tw/go-monster-hearth-server)](https://goreportcard.com/report/github.com/pdg-tw/go-monster-hearth-server)
+[![License](https://img.shields.io/github/license/evrone/go-clean-template.svg)](https://github.com/pdg-tw/go-monster-hearth-server/blob/master/LICENSE)
+[![Release](https://img.shields.io/github/v/release/evrone/go-clean-template.svg)](https://github.com/pdg-tw/go-monster-hearth-server/releases/)
 [![codecov](https://codecov.io/gh/sesigl/go-project-ddd-template/branch/master/graph/badge.svg?token=RLK70TCXU1)](https://codecov.io/gh/sesigl/go-project-ddd-template)
 
 ## Overview
@@ -28,6 +28,12 @@ by [Sebastian Sigl](https://twitter.com/sesigl).
 - [Project structure](#project-structure)
 - [Dependency Injection](#dependency-injection)
 - [DDD Architecture](#clean-architecture)
+
+## Tool install
+```sh
+go install github.com/swaggo/swag/cmd/swag@latest
+export PATH=$PATH:$HOME/go/bin
+```
 
 ## Quick start
 Local development:
@@ -524,7 +530,7 @@ similar to it. All are based on the principle of Dependency Inversion and separa
 
 - [https://github.com/bxcodec/go-clean-arch](https://github.com/bxcodec/go-clean-arch)
 - [https://github.com/zhashkevych/courses-backend](https://github.com/zhashkevych/courses-backend)
-- [https://github.com/evrone/go-clean-template](https://github.com/evrone/go-clean-template)
+- [https://github.com/pdg-tw/go-monster-hearth-server](https://github.com/pdg-tw/go-monster-hearth-server)
 
 ## Useful links
 

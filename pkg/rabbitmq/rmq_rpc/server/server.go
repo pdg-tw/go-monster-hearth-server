@@ -3,13 +3,14 @@ package server
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/evrone/go-clean-template/config"
 	"time"
+
+	"github.com/pdg-tw/go-monster-hearth-server/config"
 
 	"github.com/streadway/amqp"
 
-	"github.com/evrone/go-clean-template/pkg/logger"
-	rmqrpc "github.com/evrone/go-clean-template/pkg/rabbitmq/rmq_rpc"
+	"github.com/pdg-tw/go-monster-hearth-server/pkg/logger"
+	rmqrpc "github.com/pdg-tw/go-monster-hearth-server/pkg/rabbitmq/rmq_rpc"
 )
 
 const (

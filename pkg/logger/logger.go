@@ -2,9 +2,10 @@ package logger
 
 import (
 	"fmt"
-	"github.com/evrone/go-clean-template/config"
 	"os"
 	"strings"
+
+	"github.com/pdg-tw/go-monster-hearth-server/config"
 
 	"github.com/rs/zerolog"
 )

@@ -3,11 +3,12 @@ package db
 import (
 	"context"
 	"fmt"
+	"time"
+
 	"github.com/docker/go-connections/nat"
-	"github.com/evrone/go-clean-template/config"
+	"github.com/pdg-tw/go-monster-hearth-server/config"
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/wait"
-	"time"
 )
 
 func MustStartRMQContainer(ctx context.Context, cfg *config.Config) {

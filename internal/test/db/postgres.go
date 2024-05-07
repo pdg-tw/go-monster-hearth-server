@@ -3,15 +3,16 @@ package db
 import (
 	"context"
 	"fmt"
-	"github.com/evrone/go-clean-template/config"
-	"github.com/evrone/go-clean-template/pkg/logger"
-	"github.com/golang-migrate/migrate/v4"
-	"github.com/testcontainers/testcontainers-go"
-	postgres2 "github.com/testcontainers/testcontainers-go/modules/postgres"
-	"github.com/testcontainers/testcontainers-go/wait"
 	"path/filepath"
 	"runtime"
 	"time"
+
+	"github.com/golang-migrate/migrate/v4"
+	"github.com/pdg-tw/go-monster-hearth-server/config"
+	"github.com/pdg-tw/go-monster-hearth-server/pkg/logger"
+	"github.com/testcontainers/testcontainers-go"
+	postgres2 "github.com/testcontainers/testcontainers-go/modules/postgres"
+	"github.com/testcontainers/testcontainers-go/wait"
 
 	_ "github.com/golang-migrate/migrate/v4/database/postgres"
 	_ "github.com/golang-migrate/migrate/v4/source/file"

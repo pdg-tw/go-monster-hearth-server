@@ -1,4 +1,4 @@
-module github.com/evrone/go-clean-template
+module github.com/pdg-tw/go-monster-hearth-server
 
 go 1.19
 

@@ -3,11 +3,12 @@ package httpserver
 
 import (
 	"context"
-	"github.com/evrone/go-clean-template/config"
-	"github.com/gin-gonic/gin"
 	"net"
 	"net/http"
 	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/pdg-tw/go-monster-hearth-server/config"
 )
 
 const (

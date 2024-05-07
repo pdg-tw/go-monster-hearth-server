@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"github.com/evrone/go-clean-template/internal"
-	"github.com/evrone/go-clean-template/pkg/httpserver"
-	"github.com/evrone/go-clean-template/pkg/logger"
-	"github.com/evrone/go-clean-template/pkg/rabbitmq/rmq_rpc/server"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/pdg-tw/go-monster-hearth-server/internal"
+	"github.com/pdg-tw/go-monster-hearth-server/pkg/httpserver"
+	"github.com/pdg-tw/go-monster-hearth-server/pkg/logger"
+	"github.com/pdg-tw/go-monster-hearth-server/pkg/rabbitmq/rmq_rpc/server"
 )
 
 func main() {
