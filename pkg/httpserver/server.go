@@ -7,8 +7,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/gin-gonic/gin"
 	"github.com/pdg-tw/go-monster-hearth-server/config"
+
+	"github.com/gin-gonic/gin"
 )
 
 const (

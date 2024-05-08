@@ -5,20 +5,21 @@
 package internal
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/google/wire"
 	"github.com/pdg-tw/go-monster-hearth-server/config"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/application"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/domain/translation/entity"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/domain/translation/service"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/infrastructure/googleapi"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/infrastructure/repository"
 	amqprpc "github.com/pdg-tw/go-monster-hearth-server/internal/interfaces/amqp_rpc"
 	openapi "github.com/pdg-tw/go-monster-hearth-server/internal/interfaces/rest/v1/go"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/application"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/translation/service"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/infrastructure/googleapi"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/infrastructure/repository"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/ports"
 	"github.com/pdg-tw/go-monster-hearth-server/pkg/httpserver"
 	"github.com/pdg-tw/go-monster-hearth-server/pkg/logger"
 	"github.com/pdg-tw/go-monster-hearth-server/pkg/postgres"
 	"github.com/pdg-tw/go-monster-hearth-server/pkg/rabbitmq/rmq_rpc/server"
+
+	"github.com/gin-gonic/gin"
+	"github.com/google/wire"
 )
 
 var deps = []interface{}{}
@@ -35,7 +36,7 @@ var providerSet wire.ProviderSet = wire.NewSet(
 	openapi.NewRouter,
 
 	application.NewWithDependencies,
-	wire.Bind(new(entity.TranslationRepository), new(*repository.TranslationRepository)),
+	wire.Bind(new(ports.TranslationRepository), new(*repository.TranslationRepository)),
 	wire.Bind(new(service.Translator), new(*googleapi.GoogleTranslator)),
 )
 
@@ -90,7 +91,7 @@ func InitializeNewRmqRpcServer() *server.Server {
 
 func InitializeNewRmqRpcServerForTesting(
 	config *config.Config,
-	translationRepository entity.TranslationRepository,
+	translationRepository ports.TranslationRepository,
 	translator service.Translator,
 ) *server.Server {
 	wire.Build(providerSetSystemTests)
@@ -99,7 +100,7 @@ func InitializeNewRmqRpcServerForTesting(
 
 func InitializeNewHttpServerForTesting(
 	config *config.Config,
-	translationRepository entity.TranslationRepository,
+	translationRepository ports.TranslationRepository,
 	translator service.Translator,
 ) *httpserver.Server {
 	wire.Build(providerSetSystemTests)
