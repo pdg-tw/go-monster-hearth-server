@@ -10,5 +10,6 @@
 package openapi
 
 type HistoryResponseObject struct {
+
 	History []TranslationResponseObject `json:"history,omitempty"`
 }

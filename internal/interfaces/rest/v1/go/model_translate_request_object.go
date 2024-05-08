@@ -10,6 +10,7 @@
 package openapi
 
 type TranslateRequestObject struct {
+
 	Destination string `json:"destination"`
 
 	Original string `json:"original"`
