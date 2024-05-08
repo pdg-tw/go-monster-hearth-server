@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/pdg-tw/go-monster-hearth-server/internal/domain/translation/entity"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/translation/entity"
 	"github.com/pdg-tw/go-monster-hearth-server/pkg/postgres"
 )
 

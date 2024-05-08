@@ -12,8 +12,8 @@ package openapi
 import (
 	"net/http"
 
-	"github.com/pdg-tw/go-monster-hearth-server/internal/application"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/domain/translation/entity"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/application"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/translation/entity"
 	"github.com/pdg-tw/go-monster-hearth-server/pkg/logger"
 
 	"github.com/gin-gonic/gin"

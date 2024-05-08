@@ -4,17 +4,18 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/pdg-tw/go-monster-hearth-server/internal/domain/translation/entity"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/domain/translation/service"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/translation/entity"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/translation/service"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/ports"
 )
 
 // TranslationUseCase -.
 type TranslationUseCase struct {
-	translationRepository entity.TranslationRepository
+	translationRepository ports.TranslationRepository
 	translator            service.Translator
 }
 
-func NewWithDependencies(translationRepository entity.TranslationRepository, translator service.Translator) *TranslationUseCase {
+func NewWithDependencies(translationRepository ports.TranslationRepository, translator service.Translator) *TranslationUseCase {
 	return &TranslationUseCase{
 		translationRepository: translationRepository,
 		translator:            translator,

@@ -8,11 +8,11 @@ package internal
 
 import (
 	"github.com/pdg-tw/go-monster-hearth-server/config"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/application"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/domain/translation/entity"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/domain/translation/service"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/infrastructure/googleapi"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/infrastructure/repository"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/application"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/translation/entity"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/translation/service"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/infrastructure/googleapi"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/infrastructure/repository"
 	"github.com/pdg-tw/go-monster-hearth-server/internal/interfaces/amqp_rpc"
 	"github.com/pdg-tw/go-monster-hearth-server/internal/interfaces/rest/v1/go"
 	"github.com/pdg-tw/go-monster-hearth-server/pkg/httpserver"
@@ -75,7 +75,7 @@ func InitializeNewRmqRpcServer() *server.Server {
 	return serverServer
 }
 
-func InitializeNewRmqRpcServerForTesting(config2 *config.Config, translationRepository entity.TranslationRepository, translator service.Translator) *server.Server {
+func InitializeNewRmqRpcServerForTesting(config2 *config.Config, translationRepository ports.TranslationRepository, translator service.Translator) *server.Server {
 	loggerLogger := logger.New(config2)
 	translationUseCase := application.NewWithDependencies(translationRepository, translator)
 	v := amqprpc.NewRouter(translationUseCase)
@@ -83,7 +83,7 @@ func InitializeNewRmqRpcServerForTesting(config2 *config.Config, translationRepo
 	return serverServer
 }
 
-func InitializeNewHttpServerForTesting(config2 *config.Config, translationRepository entity.TranslationRepository, translator service.Translator) *httpserver.Server {
+func InitializeNewHttpServerForTesting(config2 *config.Config, translationRepository ports.TranslationRepository, translator service.Translator) *httpserver.Server {
 	translationUseCase := application.NewWithDependencies(translationRepository, translator)
 	loggerLogger := logger.New(config2)
 	openapiTranslator := openapi.NewTranslator(translationUseCase, loggerLogger)
