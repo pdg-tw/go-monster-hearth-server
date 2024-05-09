@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	entity "github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/entity"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/translation/service"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/service"
 	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/ports"
 )
 
