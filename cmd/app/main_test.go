@@ -8,12 +8,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gin-gonic/gin"
 	"github.com/pdg-tw/go-monster-hearth-server/config"
 	"github.com/pdg-tw/go-monster-hearth-server/internal"
 	"github.com/pdg-tw/go-monster-hearth-server/internal/test/db"
 	"github.com/pdg-tw/go-monster-hearth-server/pkg/logger"
 	"github.com/pdg-tw/go-monster-hearth-server/pkg/rabbitmq/rmq_rpc/client"
+
+	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/require"
 )
 

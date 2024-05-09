@@ -10,5 +10,6 @@
 package openapi
 
 type HistoryRequestObject struct {
+
 	Error string `json:"error,omitempty"`
 }

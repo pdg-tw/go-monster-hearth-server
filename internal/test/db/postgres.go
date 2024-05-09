@@ -7,9 +7,10 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/golang-migrate/migrate/v4"
 	"github.com/pdg-tw/go-monster-hearth-server/config"
 	"github.com/pdg-tw/go-monster-hearth-server/pkg/logger"
+
+	"github.com/golang-migrate/migrate/v4"
 	"github.com/testcontainers/testcontainers-go"
 	postgres2 "github.com/testcontainers/testcontainers-go/modules/postgres"
 	"github.com/testcontainers/testcontainers-go/wait"
