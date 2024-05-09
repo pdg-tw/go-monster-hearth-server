@@ -7,7 +7,7 @@ import (
 	"github.com/streadway/amqp"
 
 	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/application"
-	entity "github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain"
+	entity "github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/entity"
 	"github.com/pdg-tw/go-monster-hearth-server/pkg/rabbitmq/rmq_rpc/server"
 )
 

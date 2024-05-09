@@ -5,7 +5,7 @@ import (
 
 	translator "github.com/Conight/go-googletrans"
 
-	entity "github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain"
+	entity "github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/entity"
 )
 
 // GoogleTranslator -.
