@@ -4,9 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	entity "github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/translation/service"
-	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/ports"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/application/command"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/application/ports"
+	entity "github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/entity"
+	"github.com/pdg-tw/go-monster-hearth-server/internal/translation/domain/service"
 )
 
 // TranslationUseCase -.
@@ -33,16 +34,16 @@ func (uc *TranslationUseCase) History(ctx context.Context) ([]entity.Translation
 }
 
 // Translate -.
-func (uc *TranslationUseCase) Translate(_ context.Context, t entity.Translation) (entity.Translation, error) {
-	translation, err := uc.translator.Translate(t)
-	if err != nil {
-		return entity.Translation{}, fmt.Errorf("TranslationUseCase - Translate - s.translator.Translate: %w", err)
+func (uc *TranslationUseCase) Translate(ctx context.Context, t entity.Translation) (entity.Translation, error) {
+	cmd := &command.TranslateCommand{
+		Translator:            uc.translator,
+		TranslationRepository: uc.translationRepository,
+		Translation:           t,
 	}
 
-	err = uc.translationRepository.Store(context.Background(), translation)
-	if err != nil {
-		return entity.Translation{}, fmt.Errorf("TranslationUseCase - Translate - s.translationRepository.Store: %w", err)
+	if err := cmd.Handle(ctx); err != nil {
+		return entity.Translation{}, fmt.Errorf("TranslationUseCase - Translate - cmd.Execute: %w", err)
 	}
 
-	return translation, nil
+	return t, nil
 }
